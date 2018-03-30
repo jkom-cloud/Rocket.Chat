@@ -83,7 +83,7 @@ RocketChat.API.v1.addRoute('user.precise.login', { authRequired: false }, {
         let preciseUser = null;
         try {
             const result = HTTP.call('GET', pUrl, {
-                params: {Authorization: pToken}
+                headers: {Authorization: pToken}
             });
             preciseUser = result.data;
         } catch(error) {
